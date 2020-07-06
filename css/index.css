@@ -1,0 +1,122 @@
+body {
+}
+:root {
+	--background-color: #f67280;
+	--color1: #f8b195;
+	--color3: #212121;
+	--color2: rgb(255, 255, 255);
+	--color4: #a31a1a;
+	--light-shadow: #e7e7e7;
+}
+
+.color1 {
+	color: var(--color1);
+}
+.full-width {
+	width: 100%;
+}
+.red {
+	border: 2px red solid;
+}
+#brand {
+	background: var(--color3);
+	box-shadow: 0px 0px 10px 5px var(--color3);
+}
+#logo-img {
+	width: 75%;
+	margin-left: 15%;
+}
+
+#city-names {
+	width: 82%;
+	font-size: 100%;
+	margin-top: 6%;
+	margin-left: 0%;
+	padding: 0.6%;
+	border: 2px solid var(--color2);
+	border-radius: 20px;
+	display: inline-block;
+	align-content: center;
+}
+
+.card {
+	width: 100%;
+	background-color: var(--color3);
+	box-shadow: 0px 0px 5px 2px var(--light-shadow);
+	color: var(--color2);
+	border: 1px var(--light-shadow) solid;
+	margin: 2% 5% 2% 5%;
+	padding: 1% 2% 1% 2%;
+	border-radius: 20px;
+}
+.card:hover {
+	box-shadow: 0px 5px 10px 10px var(--weather-shadow);
+	border: 1px var(--light-shadow) solid;
+}
+.Original {
+	background-color: #f67280;
+}
+.Clear {
+	background-color: #f67280;
+}
+.Clouds {
+	background-color: #f3ca12;
+}
+.Rain {
+	background-color: #6c5b7b;
+}
+.Drizzle {
+	background-color: #355c7d;
+}
+
+.Mist,
+.Smoke,
+.Haze,
+.Dust,
+.Fog,
+.Sand,
+.Ash,
+.Squall,
+.Tornado {
+	background-color: rgba(173, 23, 23, 0.836);
+}
+.Snow {
+	background-color: rgb(255, 255, 255);
+}
+.Thunderstorm {
+	background-color: rgb(59, 59, 59);
+}
+
+.content-box {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+#search {
+	display: inline-block;
+}
+#main-div {
+	display: none;
+}
+
+#weather-icon img {
+	width: 30px;
+	justify-content: center;
+}
+.img-scale {
+	width: 20px;
+}
+
+.w {
+	line-height: auto;
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+@font-face {
+	font-family: Varela;
+	src: url("fonts/Varela.ttf");
+}
+
+.Varela {
+	font-family: Varela;
+}

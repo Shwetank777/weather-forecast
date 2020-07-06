@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shwetank</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="utf-8" http-equiv="encoding" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="bootstrap-4.3.1-dist/css/bootstrap.min.css"
+		/>
+		<!-- FontAwesome -->
+		<link rel="stylesheet" href="fontawesome/css/all.css" />
+		<script defer src="fontawesome/js/all.js"></script>
+		<!--Axios -->
+		<script src="axios/axios.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/index.js"></script>
+	</head>
+	<body class="container-fluid Original">
+		<div class="row Varela" id="brand">
+			<div class="col-sm-3">
+				<img id="logo-img" src="image/logo.jpg" />
+			</div>
+			<div class="col-sm-9">
+				<select
+					class="form-control"
+					id="city-names"
+					placeholder="Select Location"
+				>
+					<option disabled value="none" selected
+						>*Select Location*</option
+					>
+					<option value="1261481">New Delhi</option>
+					<option value="1264527">Chennai</option>
+					<option value="1275004">Kolkata</option>
+					<option value="6619347">Mumbai</option>
+					<option value="1270583">Gwalior</option>
+					<option value="1279259">Agra</option>
+					<option value="7279746">Noida</option>
+					<option value="1269320">Jammu&Kashmir</option>
+					<option value="1282988">Nepal</option>
+					<option value="1278253">Assam</option>
+					<option value="1267254">Kerala</option>
+					<option value="1271157">Goa</option>
+					<option value="1177654">Gujrat</option>
+					<option value="1172451">Lahore</option>
+					<option value="1167710">Punjab</option>
+				</select>
+				<button class="btn" id="search" onclick="fetchData()">
+					<i class="fas fa-search color1"></i>
+				</button>
+
+				<!-- http://api.openweathermap.org/data/2.5/forecast?id=1264527&appid=ab4ae1b0a4072f1cd0bfc3877b1dfe52 -->
+			</div>
+		</div>
+		<div class="Varela" id="main-div">
+			<div class="row content-box" id="city-data">
+				<div class="card">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="row">
+									<div>City: &nbsp</div>
+									<div id="city" readonly></div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<div>Longitute: &nbsp</div>
+									<div id="long" readonly></div>
+								</div>
+								<div class="row">
+									<div>Latitude: &nbsp</div>
+									<div id="lat" readonly></div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<div>Sunrise: &nbsp</div>
+									<div id="sunrise" readonly></div>
+								</div>
+								<div class="row">
+									<div>Sunset: &nbsp</div>
+									<div id="sunset" readonly></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row content-box" id="weather-data">
+				<div
+					onmouseover="newColor(this)"
+					onmouseout="originalColor()"
+					class="card"
+				>
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="row">
+									<div>
+										<i class="fas fa-clock"></i> &nbsp&nbsp
+										Time: &nbsp&nbsp
+									</div>
+									<div id="time" readonly>{time}</div>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="row" id="temp-div">
+							<div class="col-sm-4">
+								<div class="row">
+									<div>
+										<i class="fas fa-thermometer-empty"></i
+										>&nbsp&nbsp Min-Temp: &nbsp&nbsp
+									</div>
+									<div id="min-temp" readonly>{temp_min}</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<div>
+										<i class="fas fa-thermometer-full"></i
+										>&nbsp&nbsp Max-Temp: &nbsp&nbsp
+									</div>
+									<div id="max-temp" readonly>{temp_max}</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row">
+									<div>
+										<i class="fas fa-thermometer-half"></i
+										>&nbsp&nbsp Feels-Like: &nbsp&nbsp
+									</div>
+									<div id="feels-like" readonly>
+										{feels_like}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wind-div">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="row">
+										<div>
+											<img
+												class="img-scale"
+												src="image/windspeed.png"
+											/>&nbsp&nbsp Wind-Speed: &nbsp&nbsp
+										</div>
+										<div
+											id="wind-speed"
+											type="text"
+											value="N/A"
+											readonly
+										>
+											{speed}
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="row">
+										<div>
+											<img
+												class="img-scale"
+												src="image/winddirection.png"
+											/>&nbsp&nbsp Wind-Degree: &nbsp&nbsp
+										</div>
+										<div
+											id="wind-deg"
+											type="text"
+											value="N/A"
+											readonly
+										>
+											{deg}
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="row">
+										<div>
+											<img
+												class="img-scale"
+												src="image/pressure.png"
+											/>&nbsp Pressure: &nbsp&nbsp
+										</div>
+										<div
+											id="pressure"
+											type="text"
+											value="N/A"
+											readonly
+										>
+											{pressure}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="weather-div">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="row">
+										<div id="weather-icon">
+											<img
+												class="img-fluid"
+												src="image/weather-icons/{icon}@2x.png"
+											/>
+										</div>
+										Weather: &nbsp&nbsp
+										<div id="weather" readonly>{main}</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="row">
+										Description: &nbsp&nbsp
+										<div id="weather-desc" readonly>
+											{description}
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="row">
+										<div>
+											<img
+												class="img-scale"
+												src="image/humidity.png"
+											/>
+											&nbsp Humidity: &nbsp&nbsp
+										</div>
+										<div
+											id="humidity"
+											type="text"
+											value="N/A"
+											readonly
+										>
+											{humidity}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

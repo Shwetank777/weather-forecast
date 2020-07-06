@@ -1,0 +1,11 @@
+<!-- FontAwesome -->
+<link rel="stylesheet" href="fontawesome/css/all.css">
+<script defer src="fontawesome/js/all.js"></script>
+
+<!-- Design Include -->
+<!-- Solid -->
+<i class="fas fa-{icon-name}"></i>
+<!-- Regular -->
+<i class="far fa-{icon-name}"></i>
+<!-- Brand -->
+<i class="fab fa-{icon-name}"></i>
