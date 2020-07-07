@@ -119,3 +119,19 @@ body {
 .Varela {
 	font-family: Varela;
 }
+
+@media screen and (max-width: 700px) {
+	.card {
+		font-size: 14px;
+		padding: 5% 5% 5% 5%;
+	}
+	#brand {
+		padding-bottom: 5%;
+	}
+	#logo-img {
+		width: 100%;
+		margin-top: 3%;
+		margin: 0 auto;
+		padding: 4%;
+	}
+}
