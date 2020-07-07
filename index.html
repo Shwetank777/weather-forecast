@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Shwetank</title>
+		<title>Global Forecast</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 		<meta content="utf-8" http-equiv="encoding" />
@@ -21,7 +21,7 @@
 	<body class="container-fluid Original">
 		<div class="row Varela" id="brand">
 			<div class="col-sm-3">
-				<img id="logo-img" src="image/logo.jpg" />
+				<img id="logo-img" src="image/logo.png" />
 			</div>
 			<div class="col-sm-9">
 				<select
@@ -62,27 +62,47 @@
 						<div class="row">
 							<div class="col-sm-4">
 								<div class="row">
-									<div>City: &nbsp</div>
+									<img
+										class="img-scale"
+										src="image/city.png"
+									/>
+									<div>&nbsp Location: &nbsp</div>
 									<div id="city" readonly></div>
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="row">
-									<div>Longitute: &nbsp</div>
-									<div id="long" readonly></div>
+									<img
+										class="img-scale"
+										src="image/longitute.png"
+									/>
+									<div>&nbsp Longitute: &nbsp</div>
+									<div id="long" readonly></div>&#176
 								</div>
 								<div class="row">
-									<div>Latitude: &nbsp</div>
-									<div id="lat" readonly></div>
+									<img
+										class="img-scale"
+										src="image/latitute.png"
+									/>
+									<div>&nbsp Latitude: &nbsp</div>
+									<div id="lat" readonly></div>&#176
 								</div>
 							</div>
 							<div class="col-sm-4">
 								<div class="row">
-									<div>Sunrise: &nbsp</div>
+									<img
+										class="img-scale"
+										src="image/sunrise.png"
+									/>
+									<div>&nbsp Sunrise: &nbsp</div>
 									<div id="sunrise" readonly></div>
 								</div>
 								<div class="row">
-									<div>Sunset: &nbsp</div>
+									<img
+										class="img-scale"
+										src="image/sunset.png"
+									/>
+									<div>&nbspSunset: &nbsp</div>
 									<div id="sunset" readonly></div>
 								</div>
 							</div>
@@ -116,7 +136,7 @@
 										<i class="fas fa-thermometer-empty"></i
 										>&nbsp&nbsp Min-Temp: &nbsp&nbsp
 									</div>
-									<div id="min-temp" readonly>{temp_min}</div>
+									<div id="min-temp" readonly>{temp_min} &#8451</div>
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -125,7 +145,7 @@
 										<i class="fas fa-thermometer-full"></i
 										>&nbsp&nbsp Max-Temp: &nbsp&nbsp
 									</div>
-									<div id="max-temp" readonly>{temp_max}</div>
+									<div id="max-temp" readonly>{temp_max} &#8451</div>
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -135,7 +155,7 @@
 										>&nbsp&nbsp Feels-Like: &nbsp&nbsp
 									</div>
 									<div id="feels-like" readonly>
-										{feels_like}
+										{feels_like} &#8451
 									</div>
 								</div>
 							</div>
@@ -156,7 +176,7 @@
 											value="N/A"
 											readonly
 										>
-											{speed}
+											{speed} m/s
 										</div>
 									</div>
 								</div>
@@ -174,7 +194,7 @@
 											value="N/A"
 											readonly
 										>
-											{deg}
+											{deg}&#176
 										</div>
 									</div>
 								</div>
@@ -192,7 +212,7 @@
 											value="N/A"
 											readonly
 										>
-											{pressure}
+											{pressure} Pa
 										</div>
 									</div>
 								</div>
@@ -214,7 +234,11 @@
 								</div>
 								<div class="col-sm-4">
 									<div class="row">
-										Description: &nbsp&nbsp
+										<img
+											class="img-scale"
+											src="image/description.png"
+										/>
+										&nbsp Description: &nbsp&nbsp
 										<div id="weather-desc" readonly>
 											{description}
 										</div>
@@ -235,7 +259,7 @@
 											value="N/A"
 											readonly
 										>
-											{humidity}
+											{humidity} %
 										</div>
 									</div>
 								</div>

@@ -3,7 +3,7 @@ function makeGetRequest(path) {
 		axios.get(path).then(
 			(response) => {
 				var result = response.data;
-				console.log("Async Get Request: " + path);
+				// console.log("Async Get Request: " + path);
 				resolve(result);
 			},
 			(error) => {
@@ -53,7 +53,7 @@ function originalColor() {
 	body = document.getElementsByTagName("body")[0];
 	bodyClass = body.getAttribute("class");
 	bodyClass = bodyClass.split(" ");
-	body.setAttribute("class", bodyClass[0] + " " + weatherClass);
+	body.setAttribute("class", bodyClass[0] + " Original");
 }
 
 async function fetchData() {
@@ -106,7 +106,7 @@ async function fetchData() {
 		);
 		tempText = tempText.replace(
 			"{pressure}",
-			weatherData.list[i].main.pressure
+			weatherData.list[i].main.pressure * "100"
 		);
 		tempText = tempText.replace("{speed}", weatherData.list[i].wind.speed);
 		tempText = tempText.replace("{deg}", weatherData.list[i].wind.deg);
