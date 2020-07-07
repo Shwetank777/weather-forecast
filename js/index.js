@@ -59,7 +59,7 @@ function originalColor() {
 async function fetchData() {
 	var cityName = document.getElementById("city-names").value;
 	var weatherData = await makeGetRequest(
-		"http://api.openweathermap.org/data/2.5/forecast?id=" +
+		"https://api.openweathermap.org/data/2.5/forecast?id=" +
 			cityName +
 			"&appid=ab4ae1b0a4072f1cd0bfc3877b1dfe52"
 	);
