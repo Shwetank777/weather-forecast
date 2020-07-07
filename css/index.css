@@ -40,6 +40,9 @@ body {
 	align-content: center;
 }
 
+#weather-data {
+	display: none;
+}
 .card {
 	width: 100%;
 	background-color: var(--color3);
@@ -106,12 +109,6 @@ body {
 .img-scale {
 	width: 20px;
 	height: 20px;
-}
-
-.w {
-	line-height: auto;
-	display: inline-block;
-	vertical-align: baseline;
 }
 
 @font-face {

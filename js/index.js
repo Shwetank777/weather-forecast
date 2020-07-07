@@ -3,7 +3,7 @@ function makeGetRequest(path) {
 		axios.get(path).then(
 			(response) => {
 				var result = response.data;
-				// console.log("Async Get Request: " + path);
+				console.log("Async Get Request: " + path);
 				resolve(result);
 			},
 			(error) => {
@@ -81,15 +81,12 @@ async function fetchData() {
 	temp.innerHTML = extractDate(d);
 
 	var weatherDiv = document.getElementById("weather-data");
+	var publishDiv = document.getElementById("publish-data");
 	var divText = weatherDiv.innerHTML;
 	var finalDivText = "";
 
 	for (var i = 0; i < 40; i++) {
 		var tempText = divText;
-		tempText = tempText.replace(
-			"{weather-class}",
-			weatherData.list[i].weather[0].main
-		);
 
 		tempText = tempText.replace("{time}", weatherData.list[i].dt_txt);
 		tempText = tempText.replace(
@@ -129,7 +126,7 @@ async function fetchData() {
 
 		finalDivText += tempText + "\n\n";
 	}
-	weatherDiv.innerHTML = finalDivText;
+	publishDiv.innerHTML = finalDivText;
 	document.getElementById("main-div").style.display = "block";
 
 	// window.alert("bula liya");
